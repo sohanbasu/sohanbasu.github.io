@@ -12,6 +12,12 @@ window.setActive = (id) => {
   if (el) el.classList.add('active');
 };
 
+window.onload = function() {
+    document.getElementById('loader').style.display = 'none';
+    // Or toggle a class for a fade-out animation
+    // document.body.classList.add('loaded');
+};   
+
 // ─── Typing animation ─────────────────────────────────────────
 const fullText = 'page slipped into the ocean.';
 const typedEl = document.getElementById('typed');

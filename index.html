@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found</title>
+  <meta name="description" content="Oops! This page slipped into the ocean." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Three.js ES module importmap -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="outer-bg">
+    <div class="card">
+
+      <!-- TOP: Sky + typing text -->
+      <div class="card-top">
+        <div class="top-content">
+          <div class="typing-text">
+            <span class="text-bold">Oops. This </span><span
+              class="text-light" id="typed"></span><span
+              class="cursor" id="cursor">|</span>
+          </div>
+          <button class="back-btn" id="back-btn" onclick="setActive('home')">
+            ← Back to Home
+          </button>
+        </div>
+      </div>
+
+      <!-- Water surface divider -->
+      <div class="water-surface" aria-hidden="true"></div>
+
+      <!-- BOTTOM: Three.js canvas -->
+      <div class="card-bottom">
+        <canvas id="ocean-canvas"></canvas>
+      </div>
+
+      <!-- Nav pill -->
+      <nav class="bottom-nav" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li><button class="nav-item" id="nav-home"     onclick="setActive('home')">Home</button></li>
+          <li><button class="nav-item" id="nav-about"    onclick="setActive('about')">About</button></li>
+          <li><button class="nav-item active" id="nav-features" onclick="setActive('features')">Features</button></li>
+          <li><button class="nav-item" id="nav-more"     onclick="setActive('more')">More</button></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
